@@ -839,6 +839,11 @@
       display: none;
     }
   }
+  .md\:w-\[70\%\] {
+    @media (width >= 48rem) {
+      width: 70%;
+    }
+  }
   .md\:w-fit {
     @media (width >= 48rem) {
       width: fit-content;
