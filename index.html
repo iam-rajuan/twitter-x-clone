@@ -9,6 +9,44 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="./src/output.css">
+
+
+  <!-- DOMContentLoaded in important cz it ensure the html i fully loaded or use the script.js at the last of body -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrolllDiv = document.querySelector('.scrolll');
+      const secondDiv = document.querySelector('.second');
+
+      secondDiv.addEventListener('scroll', function () {
+        scrolllDiv.scrollTop = secondDiv.scrollTop;
+        scrolllDiv.scrollLeft = secondDiv.scrollLeft;
+      });
+    });
+  </script>
+
+
+
+<!-- -webkit-scrollbar for hiding scrollbar -->
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+
+
+
 </head>
 
 <body class="bg-black text-white">
@@ -27,23 +65,6 @@
           </svg>
         </div>
 
-        <!-- <ul>
-        <li class=" flex text-2xl items-center gap-3 justify-center hover:cursor-pointer hover:bg-gray-800 hover:rounded-full w-fit px-5 py-"><span class="material-symbols-outlined">
-          home
-          </span>Home</li>
-        <li>Explore</li>
-        <li>Notifications</li>
-        <li>Messages</li>
-        <li>Grok</li>
-        <li>List</li>
-        <li>Bookmarks</li>
-        <li>Jobs</li>
-        <li>Communities</li>
-        <li>Premium</li>
-        <li>Verified Orgs</li>
-        <li>Profile</li>
-        <li>More</li>
-      </ul> -->
         <ul class="flex flex-col text-2xl space-y-3 md:px-11 font-bold w-full  ">
           <li
             class="flex md:justify-start items-center gap-3 justify-center  mr-4 md:w-fit  hover:bg-gray-900 hover:cursor-pointer px-5 py-3 hover:rounded-full">
@@ -102,22 +123,7 @@
         </ul>
 
 
-        <!-- <div class="userprofile flex gap-3 self-start absolute bottom-0">
-          <div class="flex gap-3 ">
-            <div class="p1 ">
-              <img class="rounded-full w-10"
-                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-            </div>
-            <div class="p2">
-
-              <div>Md. Rajuan Hossen</div>
-              <div>@iam-rajuan</div>
-            </div>
-            <div class="p1">...</div>
-          </div>
-        </div> -->
-
-        <div class="userprofile bottom-0 absolute w-full mt-10  justify-end mx-10 hidden md:flex">
+        <div class="userprofile bottom-0  w-full mt-10  justify-end mx-10 hidden md:flex">
           <div
             class="item p-3 items-center gap-5 justify-end mx-5 flex   hover:bg-gray-800 cursor-pointer rounded-full w-fit">
 
@@ -137,7 +143,7 @@
     </div>
 
 
-    <div class="second w-full h-full border-[2px] border-x-gray-600 border-y-black">
+    <div class="second w-full border-[2px] border-x-gray-600 border-y-black overflow-y-scroll scrollbar-hide h-screen">
       <div class="top flex p-3 sticky top-0 bg-black backdrop-blur-3xl opacity-80">
         <div class="absolute w-16 h-1 rounded-full bg-blue-500 bottom-0 left-[18%] z-10"></div>
         <div class="left bg-red-3001 w-1/2 flex justify-center font-bold text-lg">For You</div>
@@ -192,352 +198,499 @@
             </div>
           </div>
 
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-
-
-                  <div class="posting m-4 ml-0">
-                    <img class="rounded-xl" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
-                      alt="">
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-
-
-                  <div class="posting m-4 ml-0">
-                    <img class="rounded-xl" src="https://pbs.twimg.com/media/GqSzprcXcAECMOD?format=jpg&name=360x360"
-                      alt="">
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-
-
-                  <div class="posting m-4 ml-0">
-                    <img class="rounded-xl" src="https://pbs.twimg.com/media/GqSsONTXoAAatY0?format=jpg&name=360x360"
-                      alt="">
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-
-
-                  <div class="posting m-4 ml-0">
-                    <img class="rounded-xl" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
-                      alt="">
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="posts">
-            <div class="post border-[1px] border-y-gray-600 border-x-0  ">
-              <div class="flex">
-                <div class="image m-4">
-                  <img class="w-16 rounded-full"
-                    src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
-                </div>
-                <div class="content my-3">
-                  <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
-                    class="text-gray-500">@ElonMusk · 6h </span>
-                  <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
-                    decided to hit copy and paste.
-
-                    It’s personal now.
-
-                    See you in the cage, Zuck.
-                  </div>
-
-
-                  <div class="posting m-4 ml-0">
-                    <img class="rounded-xl" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
-                      alt="">
-                  </div>
-                  <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        chat_bubble
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        repeat
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        Favorite
-                      </span> 1k
-                    </div>
-                    <div
-                      class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
-                      <span class="material-symbols-outlined">
-                        bar_chart
-                      </span> 1k
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
 
 
 
         </div>
       </div>
+
+      <div class="post-div">
+
+        <div class="posts ">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Md. Rajuan Hossen</span> <span
+                class="text-gray-500">@iam_rajuan · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="posts">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
+                class="text-gray-500">@ElonMusk · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+
+
+              <div class="posting m-4 ml-0">
+                <img class="rounded-xl w-full" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
+                  alt="">
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="posts">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
+                class="text-gray-500">@ElonMusk · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+
+
+              <div class="posting m-4 ml-0">
+                <img class="rounded-xl w-full" src="https://pbs.twimg.com/media/GqSzprcXcAECMOD?format=jpg&name=360x360"
+                  alt="">
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="posts">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
+                class="text-gray-500">@ElonMusk · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+
+
+              <div class="posting m-4 ml-0">
+                <img class="rounded-xl w-full" src="https://pbs.twimg.com/media/GqSsONTXoAAatY0?format=jpg&name=360x360"
+                  alt="">
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="posts">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
+                class="text-gray-500">@ElonMusk · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+
+
+              <div class="posting m-4 ml-0">
+                <img class="rounded-xl w-full" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
+                  alt="">
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="posts">
+          <div class="h-[1px] w-full bg-gray-700 "></div>
+          <div class="flex">
+            <div class="image m-4">
+              <img class="w-16 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1744373472556457984/xgVwZO00_mini.jpg" alt="">
+            </div>
+            <div class="content my-3">
+              <span class="font-bold hover:underline cursor-pointer text-white">Elon Musk</span> <span
+                class="text-gray-500">@ElonMusk · 6h </span>
+              <div class="postimg m-2 ml-0"> I spent $44 billion for this app and now Lizard boy just
+                decided to hit copy and paste.
+
+                It’s personal now.
+
+                See you in the cage, Zuck.
+              </div>
+
+
+              <div class="posting m-4 ml-0">
+                <img class="rounded-xl w-full" src="https://pbs.twimg.com/media/GqTDP9TWoAA1ygT?format=jpg&name=360x360"
+                  alt="">
+              </div>
+              <div class="icons flex justify-between mx-4 my-4 text-sm text-gray-600">
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    chat_bubble
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-green-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    repeat
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-pink-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    Favorite
+                  </span> 1k
+                </div>
+                <div
+                  class="icon flex items-center justify-center hover:text-blue-500 hover:bg-gray-900 hover:rounded-full p-1 hover:cursor-pointer">
+                  <span class="material-symbols-outlined">
+                    bar_chart
+                  </span> 1k
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
 
-    <div class="third w-full bg-red-50d hidden md:block ">
+    <div class="third  w-full bg-red-50d hidden md:block h-screen ">
       <!-- <div class="h-[1px] w-full bg-gray-700"></div> -->
-      <div class="sticky top-8">
-        <div class="search  m-3">
-          <input type="text" class="w-1/2 rounded-full bg-[#16181c] text-white px-4 py-2" placeholder="Search">
+      <div class=" scrolll top-8  overflow-y-scroll scrollbar-hide h-screen">
+        <!-- Sticky Search Bar -->
+        <div class="sticky top-0 bg-black z-10 pt-2 pb-2">
+          <div class="search m-3">
+            <input type="text" class="w-[70%] border-[0.5px] border-gray-600 rounded-full bg-black text-white px-4 py-2"
+              placeholder="Search">
+          </div>
         </div>
+
+        <div
+          class="subscribe flex flex-col m-3 w-2/3 rounded-xl bg-black border-[0.5px] border-gray-600  text-white px-4 py-2 ">
+          <h1 class="text-2xl py-2">Subscribe to Premium</h1>
+          <p class="pb-2">Subscribe to unlock new features and if eligible, receive a share of revenue.</p>
+
+          <button
+            class="w-fit bg-[#1d9bf0] hover:cursor-pointer  px-2 md:px-4 my-3 text-xl rounded-full py-1 md:py-3 text-white">
+            <p>Subscribe</p>
+          </button>
+        </div>
+
+        <div class="whats top-0 m-3 bg-black border-[0.5px] border-gray-600 w-2/3 py-5 rounded-xl space-y-3">
+          <h1 class="text-xl font-bold px-3">Whats Happening</h1>
+
+          <div class="item-container hover:bg-gray-800 cursor-pointer flex justify-between items-center">
+            <div class="item p-3  px-3">
+              <div class="text-sm text-gray-200">Trending in India</div>
+              <div class="font-bold">#Orry</div>
+              <div class="text-sm text-gray-200">40.2k Posts</div>
+            </div>
+            <div class="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path
+                  d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
+              </svg>
+            </div>
+          </div>
+
+
+          <div class="item-container hover:bg-gray-800 cursor-pointer flex justify-between items-center">
+            <div class="item p-3  px-3">
+              <div class="text-sm text-gray-200">Trending in India</div>
+              <div class="font-bold">#Orry</div>
+              <div class="text-sm text-gray-200">40.2k Posts</div>
+            </div>
+            <div class="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path
+                  d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="item-container hover:bg-gray-800 cursor-pointer flex justify-between items-center">
+            <div class="item p-3  px-3">
+              <div class="text-sm text-gray-200">Trending in India</div>
+              <div class="font-bold">#Orry</div>
+              <div class="text-sm text-gray-200">40.2k Posts</div>
+            </div>
+            <div class="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path
+                  d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="item-container hover:bg-gray-800 cursor-pointer flex justify-between items-center">
+            <div class="item p-3  px-3">
+              <div class="text-sm text-gray-200">Trending in India</div>
+              <div class="font-bold">#Orry</div>
+              <div class="text-sm text-gray-200">40.2k Posts</div>
+            </div>
+            <div class="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path
+                  d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
+              </svg>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+        <!-- who to follow -->
+        <div class="who top-[50vh] m-3 bg-black w-2/3 border border-gray-600 py-5 rounded-xl space-y-1">
+          <h1 class="text-xl font-bold px-3">Who To Follow</h1>
+
+
+          <div class="item p-3 items-center gap-2 flex justify-between hover:bg-gray-800 cursor-pointer">
+            <div class="flex gap-3">
+
+              <div class="p1"><img class="w-12 h-12"
+                  src="https://pbs.twimg.com/profile_images/1767351110228918272/3Pndc5OT_normal.png" alt="vercel"></div>
+              <div class="p2 ">
+                <div>Vercel</div>
+                <div class="text-gray-500">@vercel</div>
+              </div>
+            </div>
+
+            <div class="p3">
+              <button class="bg-white text-black px-5 py-2 rounded-full font-bold">Follow</button>
+            </div>
+
+          </div>
+          <div class="item p-3 items-center gap-2 flex justify-between hover:bg-gray-800 cursor-pointer">
+            <div class="flex gap-3">
+
+              <div class="p1"><img class="w-12 h-12"
+                  src="https://pbs.twimg.com/profile_images/1767351110228918272/3Pndc5OT_normal.png" alt="vercel"></div>
+              <div class="p2 ">
+                <div>React</div>
+                <div class="text-gray-500">@react</div>
+              </div>
+            </div>
+
+            <div class="p3">
+              <button class="bg-white text-black px-5 py-2 rounded-full font-bold">Follow</button>
+            </div>
+
+          </div>
+          <div class="item p-3 items-center gap-2 flex justify-between hover:bg-gray-800 cursor-pointer">
+            <div class="flex gap-3">
+
+              <div class="p1"><img class="w-12 h-12"
+                  src="https://pbs.twimg.com/profile_images/1767351110228918272/3Pndc5OT_normal.png" alt="vercel"></div>
+              <div class="p2 ">
+                <div>Shad.js</div>
+                <div class="text-gray-500">@shad</div>
+              </div>
+            </div>
+
+            <div class="p3">
+              <button class="bg-white text-black px-5 py-2 rounded-full font-bold">Follow</button>
+            </div>
+
+          </div>
+          <div class="text-blue-600 px-3 cursor-pointer hover:underline my-5">Show More</div>
+        </div>
+
+        <div class="terms top-[84vh] m-3 text-xs text-gray-500 px-3  w-1/2 py-5   space-y-1">
+          <span class="hover:underline cursor-pointer mr-2">Terms of Service</span>
+          <span class="hover:underline cursor-pointer mr-2">Privacy Policy</span>
+          <span class="hover:underline cursor-pointer mr-2">Cookie Policy</span>
+          <span class="hover:underline cursor-pointer mr-2">Accessibility</span>
+          <span class="hover:underline cursor-pointer mr-2">Ads info</span>
+          <span class="hover:underline cursor-pointer mr-2">More</span>
+          <span class="hover:underline cursor-pointer mr-2">© 2024 X Corp.</span>
+        </div>
+
 
 
 
@@ -547,6 +700,7 @@
 
     </div>
   </div>
+
 
 </body>
 
